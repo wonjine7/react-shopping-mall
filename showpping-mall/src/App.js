@@ -1,10 +1,12 @@
 import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 import {Routes,Route} from "react-router-dom";
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
+
 
 
 
@@ -22,6 +24,7 @@ import Navbar from './component/Navbar';
 
 
 function App() {
+  const [authhenticate, setAuthhenticate] = useState(false) //true면 로그인이 됨 false면 ㅗ그인이 안됨
   return (
     <div>
       <Navbar/>

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer;
 }
 
 .nav-section{
@@ -24,5 +25,15 @@
 }
 
 .menu-search{
-   
-}
+    border-bottom: 1px solid black;
+    position: absolute;
+    right: 20px;
+    padding: 5px;
+  }
+  .menu-search input{
+    border:none;
+    margin-left:5px;
+  }
+  .menu-search input:focus {
+    outline:none
+  }

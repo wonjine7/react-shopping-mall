@@ -2,14 +2,18 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import {useNavigate} from "react-router-dom";
 const Navbar = () => {
     const menulist = ['여성', 'Divied', '남성', '신생아/유아' , 'Hnm HOME','Sale','지속가능성',];
-  return (
+    const navigete = useNavigate();
+    const goToLogin=()=>{
+      navigete("/login");
+    }
+    return (
     <div>
      
       <div>
-        <div class='login-button'>
+        <div class='login-button' onClick={goToLogin}>
             <FontAwesomeIcon icon={faUser} />
             <div>로그인</div>
         </div>
