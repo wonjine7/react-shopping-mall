@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import {Routes,Route} from "react-router-dom";
 import ProductAll from './page/ProductAll';
@@ -25,13 +25,16 @@ import Navbar from './component/Navbar';
 
 function App() {
   const [authhenticate, setAuthhenticate] = useState(false) //true면 로그인이 됨 false면 ㅗ그인이 안됨
+  useEffect(()=>{
+    console.log("aaaa",authhenticate);
+  },[authhenticate])
   return (
     <div>
       <Navbar/>
 
       <Routes>
         <Route path='/' element={<ProductAll/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<Login setAuthhenticate={setAuthhenticate}/>}/>
         <Route path='/product/:id' element={<ProductDetail/>}/>
       </Routes>
 

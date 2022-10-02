@@ -1,11 +1,14 @@
 import React from 'react'
 import {Button,Container,Form} from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-
-const Login = () => {
+const Login = ({setAuthhenticate}) => {
+  const navigate = useNavigate();
   const loginUser = (event) =>{
     event.preventDefault(); 
     console.log("login user function issue");
+    setAuthhenticate(true);
+    navigate("/");
   }
   return (
     <Container>
