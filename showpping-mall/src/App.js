@@ -6,6 +6,7 @@ import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
+import PrivateRoute from './route/PrivateRoute';
 
 
 
@@ -35,7 +36,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ProductAll/>}/>
         <Route path='/login' element={<Login setAuthhenticate={setAuthhenticate}/>}/>
-        <Route path='/product/:id' element={<ProductDetail/>}/>
+        <Route path='/product/:id' element={<PrivateRoute authhenticate={authhenticate}/>}/>
       </Routes>
 
     </div>
